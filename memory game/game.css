@@ -56,7 +56,7 @@ box-picture > img{
 .box-cover{
 	width:75px;
 	height:125px;
-	background:url(game-images/image-cover.jpg) no-repeat;
+	background:url(images/back.png) no-repeat;
 	border:solid 1px #ebe5e5;
 	float:left;
 	cursor:pointer;
@@ -99,7 +99,7 @@ box-picture > img{
 	}
 
 	.box-cover{
-		background:url(game-images/image-cover-75.jpg) no-repeat;
+		background:url(images/back-75.png) no-repeat;
 	}
 
 	#game-statistic{
@@ -125,7 +125,7 @@ box-picture > img{
 	}
 
 	.box-cover{
-		background:url(game-images/image-cover-50.jpg) no-repeat;
+			background:url(images/back-50.png) no-repeat;
 	}
 
 	#game-statistic{

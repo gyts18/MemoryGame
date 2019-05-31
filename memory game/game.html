@@ -3,16 +3,15 @@
 <head>
   <title> Card Memory Game </title>
   <link href="game.css" type="text/css" rel="stylesheet"/>
+  <select id="difficulity">
+    <option value="3">3x3</option>
+    <option value="4">4x4</option>
+    <option value="5">5x5</option>
+  </select>
+  <button id="btnStart">Play</button>
 </head>
 <body>
 <div id="canvas-game">
-<select id="difficulity">
-  <option value="3">3x3</option>
-  <option value="4">4x4</option>
-  <option value="5">5x5</option>
-  <option value="6">6x6</option>
-</select>
-<button onclick="generateBoard()">Play</button>
     <div id="game-content"></div>
     </div>
 <div id="game-statistic">
@@ -24,6 +23,7 @@
   	<div class="congrats-message">Congratulations, you have revealed all the images ;-)</div>
   	<button id="btnRestart" type="button">Restart</button>
   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="game.js"></script>
 
 </body>
