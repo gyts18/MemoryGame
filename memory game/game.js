@@ -90,7 +90,7 @@ initData: function()
   var b = a.options[a.selectedIndex].value;
     if(b==3)
     {
-      noOfBoxGame = 9;
+      noOfBoxGame = 10;
     }
     else if (b==4)
     {
@@ -98,9 +98,10 @@ initData: function()
     }
     else if(b==5)
     {
-      noOfBoxGame=25;
+      noOfBoxGame=26;
     }
-    for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);}}
+    for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);
+    console.log(boxIndexes[i]);}}
     		this.shuffleArray(boxIndexes);
 },
 //function to shuffle array
@@ -118,9 +119,9 @@ initData: function()
 
 		//load the images and image cover
 		for(var i = 1; i <=noOfBoxGame; i++){
-
-			boxes += `<div id='box-${i-1}' class='box-picture'><img src='${pathToImage}${images[i-1].name}.${images[i-1].type}'/></div>`;
-			boxCover += `<div id='box-cover-${i-1}' class='box-cover' data-id='${pathToImage}${images[i-1].name}.${images[i-1].type}'></div>`;
+      console.log(images[boxIndexes[i-1]+1]);
+			boxes += `<div id='box-${i}' class='box-picture'><img src='${pathToImage}${images[boxIndexes[i-1]+1].name}.${images[boxIndexes[i-1]+1].type}'/></div>`;
+			boxCover += `<div id='box-cover-${i}' class='box-cover' data-id='${pathToImage}${images[boxIndexes[i-1] + 1].name}.${images[boxIndexes[i-1] + 1].type}'></div>`;
 		}
 		boxCover = `<div class='box-cover-wrapper'>${boxCover}</div>`;
 		$("#game-content").html(boxes + boxCover);
