@@ -2,6 +2,7 @@
 var noOfBoxGame;
 var boxIndexes = [];
 var noOfClick = 0;
+var clicksLeft=0;
 var clickCounter = 0;
 var correctGuess = 0;
 var clickImages = [];
@@ -87,19 +88,55 @@ game={
 initData: function()
 {
   var a = document.getElementById("size");
-  var b = a.options[a.selectedIndex].value;
-    if(b==3)
-    {
-      noOfBoxGame = 10;
-    }
-    else if (b==4)
-    {
-      noOfBoxGame=16;
-    }
-    else if(b==5)
-    {
-      noOfBoxGame=26;
-    }
+  var size = a.options[a.selectedIndex].value;
+   a  = document.getElementById("difficulity");
+  var difficulity = a.options[a.selectedIndex].value;
+  if(size==3 && difficulity==1 )
+  {
+    clicksLeft = 50
+    noOfBoxGame = 10;
+  }
+  else if(size==3&&difficulity==2)
+  {
+    clicksLeft = 35
+    noOfBoxGame = 10;
+  }
+  else if(size==3&&difficulity==3)
+  {
+    clicksLeft = 20
+    noOfBoxGame = 10;
+  }
+  else if (size==4 && difficulity == 1)
+  {
+    clicksLeft=50;
+    noOfBoxGame=16;
+  }
+  else if(size==4 && difficulity==2)
+  {
+    clicksLeft=40;
+    noOfBoxGame=16;
+  }
+  else if(size==4 && difficulity==3)
+  {
+    clicksLeft=30;
+    noOfBoxGame=16;
+  }
+  else if(size==5 && difficulity==1)
+  {
+    clicksLeft=100;
+    noOfBoxGame=26;
+  }
+  else if(size==5 && difficulity==2)
+  {
+    clicksLeft=70;
+    noOfBoxGame=26;
+  }
+  else if(size==5 && difficulity==3)
+  {
+    clicksLeft=60;
+    noOfBoxGame=26;
+  }
+  $("#no-of-clicksLeft").html(clicksLeft);
     for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);
     console.log(boxIndexes[i]);}}
     		this.shuffleArray(boxIndexes);
@@ -131,9 +168,9 @@ initData: function()
 		$(".box-cover").on("click", function(){
 			if(noOfClick <= 1){
 				clickCounter++;
-				$("#no-of-clicks").html(clickCounter);
-
+        $("#no-of-clicksLeft").html(clicksLeft--);
 				noOfClick++;
+        $("#no-of-clicksLeft").html(clicksLeft--);
 				$(this).addClass('animated flipOutX');
 
 				var clickCover = {
@@ -151,7 +188,17 @@ initData: function()
       						noOfClick = 0;
       						clickImages = [];
 
-      						//if the game is completed then perform a reset
+
+                  if(clicksLeft == 0)
+                  {
+                    $("#canvas-game, #game-statistic").fadeOut(1000);
+                    $("#game-message1").addClass('animated bounceInDown').css('animation-delay', '1s').show();
+                    correctGuess = 0;
+                    $("#correct-guess").html(correctGuess);
+                    clickCounter = 0;
+                    $("#no-of-clicks").html(clickCounter);
+                  }
+                  //if the game is completed then perform a reset
       						if(correctGuess >= (noOfBoxGame/2)){
       							$("#canvas-game, #game-statistic").fadeOut(1000);
       							$("#game-message").addClass('animated bounceInDown').css('animation-delay', '1s').show();

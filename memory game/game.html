@@ -9,7 +9,11 @@
     <option value="4">4x4</option>
     <option value="5">5x5</option>
   </select>
-  <select id=""
+  <select id="difficulity">
+    <option value="1">Easy</option>
+    <option value="2">Medium</option>
+    <option value="3">Hard</option>
+  </select>
   <button id="btnStart">Play</button>
 </head>
 <body>
@@ -17,14 +21,17 @@
     <div id="game-content"></div>
     </div>
 <div id="game-statistic">
-	<div id="statistic-left">No of Clicks: <span id="no-of-clicks" class="bold-text">0</span></div>
-	<div id="statistic-right">Correct Guess: <span id="correct-guess" class="bold-text">0</span></div>
+  <div id="statistic-right">Clicks left: <span id="no-of-clicksLeft" class="bold-text">0</span></div>
 	<div class="clear"></div>
 
   <div id="game-message">
   	<div class="congrats-message">Congratulations, you have revealed all the images ;-)</div>
-  	<button id="btnRestart" type="button">Restart</button>
+  	<button id="btnRestart" type="button">Play again</button>
   </div>
+  <div id="game-message1">
+    <div class="lose-message">Sorry, you failed :(</div>
+    <button id="tryAgain" type="button">Try again</button>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="game.js"></script>
 
