@@ -71,17 +71,18 @@ img {
 #game-message{
 	margin:0 auto;
 	font-size:20px;
-	background:#f7f5b5;
+	background:#ff66cc;
 	padding:15px;
 	border:solid 1px #ccc;
 	border-radius:5px;
 	width:612px;
 	display:none;
+
 }
 #game-message1{
 	margin:0 auto;
 	font-size:20px;
-	background:#f7f5b5;
+	background:#ff66cc;
 	padding:15px;
 	border:solid 1px #ccc;
 	border-radius:5px;

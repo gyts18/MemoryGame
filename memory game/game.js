@@ -79,11 +79,13 @@ $(function(){
 	$("#btnStart").on("click", function(){
 		game.renderGameLayout();
 	});
+  //clear the board
   $("#btnRestart").on("click", function(){
     $("#game-content").html("");
     $("#game-message").hide();
     $("#canvas-game, #game-statistic").show();
   });
+  //same thing
   $("#tryAgain").on("click", function(){
     $("#game-content").html("");
     $("#game-message1").hide();
@@ -96,6 +98,7 @@ game={
 
 initData: function()
 {
+  //Getting requirements to build up the game
   var a = document.getElementById("size");
   var size = a.options[a.selectedIndex].value;
    a  = document.getElementById("difficulity");
@@ -155,6 +158,7 @@ initData: function()
     noOfBoxGame=26;
   }
   $("#no-of-clicksLeft").html(clicksLeft);
+  // two loops one loop is to fill in x numbers (starting from 0) and a copy of the duplicated x numbers.
     for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);
     console.log(boxIndexes[i]);}}
     		this.shuffleArray(boxIndexes);
@@ -204,10 +208,10 @@ initData: function()
       						clickImages = [];
 
 
-                  if(clicksLeft == 0)
+                  if(clicksLeft <= 0)
                   {
                     $("#canvas-game, #game-statistic").fadeOut(1000);
-                    $("#game-message1").addClass('animated bounceInDown').css('animation-delay', '1s').show();
+                    $("#game-message1").addClass('animated fadeIn').css('animation-delay', '1s').show();
                     correctGuess = 0;
                     $("#correct-guess").html(correctGuess);
                     clickCounter = 0;
@@ -217,7 +221,7 @@ initData: function()
                   //if the game is completed then perform a reset
       						if(correctGuess >= (noOfBoxGame/2)){
       							$("#canvas-game, #game-statistic").fadeOut(1000);
-      							$("#game-message").addClass('animated bounceInDown').css('animation-delay', '1s').show();
+      							$("#game-message").addClass('animated fadeIn').css('animation-delay', '1s').show();
       							correctGuess = 0;
       							$("#correct-guess").html(correctGuess);
       							clickCounter = 0;
