@@ -8,7 +8,6 @@ var correctGuess = 0;
 var clickImages = [];
 var timeOutRestore = 1000;
 const pathToImage = `./images/`;
-var cardArray = [];
 const images=[
   {
   name:"2",
@@ -80,6 +79,16 @@ $(function(){
 	$("#btnStart").on("click", function(){
 		game.renderGameLayout();
 	});
+  $("#btnRestart").on("click", function(){
+    $("#game-content").html("");
+    $("#game-message").hide();
+    $("#canvas-game, #game-statistic").show();
+  });
+  $("#tryAgain").on("click", function(){
+    $("#game-content").html("");
+    $("#game-message1").hide();
+    $("#canvas-game, #game-statistic").show();
+  });
 });
 
 game={
@@ -93,46 +102,55 @@ initData: function()
   var difficulity = a.options[a.selectedIndex].value;
   if(size==3 && difficulity==1 )
   {
+    $("#canvas-game").css({"width":"222px","height":"512px"});
     clicksLeft = 50
     noOfBoxGame = 10;
   }
   else if(size==3&&difficulity==2)
   {
+    $("#canvas-game").css({"width":"222px","height":"512px"});
     clicksLeft = 35
     noOfBoxGame = 10;
   }
   else if(size==3&&difficulity==3)
   {
+    $("#canvas-game").css({"width":"222px","height":"512px"});
     clicksLeft = 20
     noOfBoxGame = 10;
   }
   else if (size==4 && difficulity == 1)
   {
+    $("#canvas-game").css({"width":"297px","height":"512px"});
     clicksLeft=50;
     noOfBoxGame=16;
   }
   else if(size==4 && difficulity==2)
   {
+    $("#canvas-game").css({"width":"297px","height":"512px"});
     clicksLeft=40;
     noOfBoxGame=16;
   }
   else if(size==4 && difficulity==3)
   {
+    $("#canvas-game").css({"width":"297px","height":"512px"});
     clicksLeft=30;
     noOfBoxGame=16;
   }
   else if(size==5 && difficulity==1)
   {
+    $("#canvas-game").css({"width":"372px","height":"762px"});
     clicksLeft=100;
     noOfBoxGame=26;
   }
   else if(size==5 && difficulity==2)
   {
+    $("#canvas-game").css({"width":"372px","height":"762px"});
     clicksLeft=70;
     noOfBoxGame=26;
   }
   else if(size==5 && difficulity==3)
   {
+    $("#canvas-game").css({"width":"372px","height":"762px"});
     clicksLeft=60;
     noOfBoxGame=26;
   }
@@ -167,12 +185,9 @@ initData: function()
 		$(".box-cover").off("click");
 		$(".box-cover").on("click", function(){
 			if(noOfClick <= 1){
-				clickCounter++;
         $("#no-of-clicksLeft").html(clicksLeft--);
-				noOfClick++;
-        $("#no-of-clicksLeft").html(clicksLeft--);
-				$(this).addClass('animated flipOutX');
-
+        noOfClick++;
+				$(this).addClass('animated flipOutY');
 				var clickCover = {
 					ImageID: $(this).attr("data-id"),
 					CoverID: $(this).attr("id").replace("box-cover-","")
@@ -197,6 +212,7 @@ initData: function()
                     $("#correct-guess").html(correctGuess);
                     clickCounter = 0;
                     $("#no-of-clicks").html(clickCounter);
+                    boxIndexes=[];
                   }
                   //if the game is completed then perform a reset
       						if(correctGuess >= (noOfBoxGame/2)){
@@ -206,12 +222,13 @@ initData: function()
       							$("#correct-guess").html(correctGuess);
       							clickCounter = 0;
       							$("#no-of-clicks").html(clickCounter);
+                    boxIndexes=[];
       						}
       					}else{
       						//if not the same then close the image cover again.
       						setTimeout(function(){
       							clickImages.forEach(function(item, index){
-      								$("#box-cover-" + item.CoverID).removeClass("flipOutX").addClass('animated flipInX');
+      								$("#box-cover-" + item.CoverID).removeClass("flipOutY").addClass('animated flipInY');
       							});
       							//reset
       							noOfClick = 0;
