@@ -86,7 +86,7 @@ game={
 
 initData: function()
 {
-  var a = document.getElementById("difficulity");
+  var a = document.getElementById("size");
   var b = a.options[a.selectedIndex].value;
     if(b==3)
     {

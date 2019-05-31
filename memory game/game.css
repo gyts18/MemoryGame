@@ -3,6 +3,12 @@ html,body{
 	padding:0;
 	text-align:center;
 }
+img {
+    max-width: 100%;
+		height:125px;
+		object-fit: fill;
+}
+
 #canvas-game{
 	margin:0 auto;
 	text-align:left;
@@ -34,17 +40,16 @@ html,body{
 .clear{
 	clear:both;
 }
+
 .box-picture{
 	float:left;
-	width:75px;
+	width:70px;
 	height:125px;
 	border:solid 1px #ebe5e5;
         display:none;
+
 }
-box-picture > img{
-	width:75px;
-	height:125px;
-}
+
 
 .box-cover-wrapper{
 	position:absolute;
@@ -54,9 +59,10 @@ box-picture > img{
 }
 
 .box-cover{
-	width:75px;
+	width:70px;
 	height:125px;
 	background:url(images/back.png) no-repeat;
+	background-size: 100% 100%;
 	border:solid 1px #ebe5e5;
 	float:left;
 	cursor:pointer;
