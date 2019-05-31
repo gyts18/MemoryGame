@@ -36,7 +36,7 @@ html,body{
 }
 .box-picture{
 	float:left;
-	width:75;
+	width:75px;
 	height:125px;
 	border:solid 1px #ebe5e5;
         display:none;
@@ -56,7 +56,7 @@ box-picture > img{
 .box-cover{
 	width:75px;
 	height:125px;
-	background:url(images/cover.jpg) no-repeat;
+	background:url(game-images/image-cover.jpg) no-repeat;
 	border:solid 1px #ebe5e5;
 	float:left;
 	cursor:pointer;
@@ -94,12 +94,12 @@ box-picture > img{
 	}
 
 	.box-picture, .box-picture > img, .box-cover{
-		width:56px;
-		height:75px;
+		width:75px;
+		height:56px;
 	}
 
 	.box-cover{
-		background:url(images/cover.jpg) no-repeat;
+		background:url(game-images/image-cover-75.jpg) no-repeat;
 	}
 
 	#game-statistic{
@@ -120,8 +120,8 @@ box-picture > img{
 	}
 
 	.box-picture, .box-picture > img, .box-cover{
-		width:38px;
-		height:50px;
+		width:50px;
+		height:38px;
 	}
 
 	.box-cover{
