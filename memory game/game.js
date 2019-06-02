@@ -103,60 +103,77 @@ initData: function()
   var size = a.options[a.selectedIndex].value;
    a  = document.getElementById("difficulity");
   var difficulity = a.options[a.selectedIndex].value;
-  if(size==3 && difficulity==1 )
+  if(size==3)
   {
-    $("#canvas-game").css({"width":"222px","height":"512px"});
-    clicksLeft = 50
-    noOfBoxGame = 10;
+    switch(difficulity)
+    {
+    case '1':
+    {
+      clicksLeft = 50;
+      break;
+    }
+    case '2':
+    {
+      clicksLeft = 35;
+      break;
+    }
+    case '3':
+    {
+      clicksLeft = 20;
+      break;
+    }
   }
-  else if(size==3&&difficulity==2)
+  $("#canvas-game").css({"width":"222px","height":"512px"});
+  noOfBoxGame = 10;
+}
+  else if (size==4)
   {
-    $("#canvas-game").css({"width":"222px","height":"512px"});
-    clicksLeft = 35
-    noOfBoxGame = 10;
+    switch(difficulity)
+    {
+    case '1':
+    {
+      clicksLeft = 50;
+      break;
+    }
+    case '2':
+    {
+      clicksLeft = 40;
+      break;
+    }
+    case '3':
+    {
+      clicksLeft = 30;
+      break;
+    }
   }
-  else if(size==3&&difficulity==3)
+  $("#canvas-game").css({"width":"297px","height":"512px"});
+  noOfBoxGame=16;
+}
+
+  else if(size==5)
   {
-    $("#canvas-game").css({"width":"222px","height":"512px"});
-    clicksLeft = 20
-    noOfBoxGame = 10;
-  }
-  else if (size==4 && difficulity == 1)
-  {
-    $("#canvas-game").css({"width":"297px","height":"512px"});
-    clicksLeft=50;
-    noOfBoxGame=16;
-  }
-  else if(size==4 && difficulity==2)
-  {
-    $("#canvas-game").css({"width":"297px","height":"512px"});
-    clicksLeft=40;
-    noOfBoxGame=16;
-  }
-  else if(size==4 && difficulity==3)
-  {
-    $("#canvas-game").css({"width":"297px","height":"512px"});
-    clicksLeft=30;
-    noOfBoxGame=16;
-  }
-  else if(size==5 && difficulity==1)
-  {
-    $("#canvas-game").css({"width":"372px","height":"762px"});
-    clicksLeft=100;
-    noOfBoxGame=26;
-  }
-  else if(size==5 && difficulity==2)
-  {
-    $("#canvas-game").css({"width":"372px","height":"762px"});
-    clicksLeft=70;
-    noOfBoxGame=26;
-  }
-  else if(size==5 && difficulity==3)
-  {
-    $("#canvas-game").css({"width":"372px","height":"762px"});
-    clicksLeft=60;
-    noOfBoxGame=26;
-  }
+    switch(difficulity)
+    {
+    case '1':
+    {
+      clicksLeft = 100;
+      break;
+    }
+    case '2':
+    {
+      clicksLeft = 70;
+      break;
+    }
+    case '3':
+    {
+      clicksLeft = 60;
+      break;
+    }
+}
+$("#canvas-game").css({"width":"372px","height":"762px"});
+noOfBoxGame=26;
+}
+
   $("#no-of-clicksLeft").html(clicksLeft);
   // two loops one loop is to fill in x numbers (starting from 0) and a copy of the duplicated x numbers.
     for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);
