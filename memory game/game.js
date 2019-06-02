@@ -177,7 +177,6 @@ noOfBoxGame=26;
   $("#no-of-clicksLeft").html(clicksLeft);
   // two loops one loop is to fill in x numbers (starting from 0) and a copy of the duplicated x numbers.
     for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);
-    console.log(boxIndexes[i]);}}
     		this.shuffleArray(boxIndexes);
 },
 //function to shuffle array
@@ -195,7 +194,6 @@ noOfBoxGame=26;
 
 		//load the images and image cover
 		for(var i = 1; i <=noOfBoxGame; i++){
-      console.log(images[boxIndexes[i-1]+1]);
 			boxes += `<div id='box-${i}' class='box-picture'><img src='${pathToImage}${images[boxIndexes[i-1]+1].name}.${images[boxIndexes[i-1]+1].type}'/></div>`;
 			boxCover += `<div id='box-cover-${i}' class='box-cover' data-id='${pathToImage}${images[boxIndexes[i-1] + 1].name}.${images[boxIndexes[i-1] + 1].type}'></div>`;
 		}
