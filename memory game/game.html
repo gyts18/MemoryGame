@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Card Memory Game </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" type="text/css" rel="stylesheet"/>
-  <link href="game.css" type="text/css" rel="stylesheet"/>
-  <select id="size">
-    <option value="3">3x3</option>
-    <option value="4">4x4</option>
-    <option value="5">5x5</option>
-  </select>
-  <select id="difficulity">
-    <option value="1">Easy</option>
-    <option value="2">Medium</option>
-    <option value="3">Hard</option>
-  </select>
-  <button id="btnStart">Play</button>
+    <title> Card Memory Game </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" type="text/css"
+          rel="stylesheet"/>
+    <link href="game.css" type="text/css" rel="stylesheet"/>
+    <select id="size">
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5">5x5</option>
+    </select>
+    <select id="difficulity">
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+    </select>
+    <button id="btnStart">Play</button>
 </head>
 <body>
 <div id="canvas-game">
     <div id="game-content"></div>
-    </div>
-<div id="game-statistic">
-  <div id="statistic-right">Clicks left: <span id="no-of-clicksLeft" class="bold-text">0</span></div>
-	<div class="clear"></div>
 </div>
-  <div id="game-message">
-  	<div class="congrats-message">Congratulations, you have revealed all the images</div>
-  	<button id="btnRestart" type="button">Play again</button>
-  </div>
-  <div id="game-message1">
+<div id="game-statistic">
+    <div id="statistic-right">Clicks left: <span id="no-of-clicksLeft" class="bold-text">0</span></div>
+    <div class="clear"></div>
+</div>
+<div id="game-message">
+    <div class="congrats-message">Congratulations, you have revealed all the images</div>
+    <button id="btnRestart" type="button">Play again</button>
+</div>
+<div id="game-message1">
     <div class="lose-message">Sorry, you failed :(</div>
     <button id="tryAgain" type="button">Try again</button>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="game.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="game.js"></script>
 
 </body>
 </html>
