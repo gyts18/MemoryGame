@@ -176,7 +176,7 @@ noOfBoxGame=26;
 
   $("#no-of-clicksLeft").html(clicksLeft);
   // two loops one loop is to fill in x numbers (starting from 0) and a copy of the duplicated x numbers.
-    for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);
+    for(var x=0;x<=1;x++){for(var i=0; i<= (noOfBoxGame/2)-1;i++){boxIndexes.push(i);}}
     		this.shuffleArray(boxIndexes);
 },
 //function to shuffle array
